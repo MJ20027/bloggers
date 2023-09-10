@@ -90,7 +90,8 @@ app.post('/logout', (req,res) => {
   res.cookie('token', '').json('ok');
 });
 
-app.post('/post', upload.single('file'), async (req,res) => {
+// app.post('/post', upload.single('file'), async (req,res) => {
+  app.post('/post', async (req,res) => {
   res.setHeader("Access-Control-Allow-Credentials","true");
   const {originalname,path} = req.file;
   const parts = originalname.split('.');
@@ -109,7 +110,8 @@ app.post('/post', upload.single('file'), async (req,res) => {
 
 });
 
-app.put('/post',upload.single('file'), async (req,res) => {
+// app.put('/post',upload.single('file'), async (req,res) => {
+  app.put('/post',upload.single('file'), async (req,res) => {
   res.setHeader("Access-Control-Allow-Credentials","true");
   let newPath = null;
   if (req.file) {
