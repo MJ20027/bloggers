@@ -111,7 +111,7 @@ app.post('/logout', (req,res) => {
 });
 
 // app.put('/post',upload.single('file'), async (req,res) => {
-  app.put('/post',upload.single('file'), async (req,res) => {
+  app.put('/post', async (req,res) => {
   res.setHeader("Access-Control-Allow-Credentials","true");
   let newPath = null;
   if (req.file) {
